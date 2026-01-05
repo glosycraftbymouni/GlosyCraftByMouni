@@ -307,7 +307,9 @@ footer {
   color: #e91e63;
   font-weight: bold;
 }
-.about-text {
-  color: #1a0dab; /* same as products link blue */
+/* Match About Us text with product link color */
+.about-us p {
+  color: #551A8B;
 }
+
 
