@@ -308,7 +308,6 @@ footer {
   font-weight: bold;
 }
 .about-text {
-  color: blue;
+  color: #1a0dab; /* same as products link blue */
 }
-
 
