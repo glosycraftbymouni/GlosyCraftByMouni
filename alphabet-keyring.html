@@ -16,7 +16,10 @@
     </section>
     <p>Personalized resin gifts, perfect for any occasion</p>
   </section>
-
+<div id="imagePopup" class="popup">
+  <span class="close" onclick="closeImage()">×</span>
+  <img id="popupImg">
+</div>
   <div class="back-home">
     <a href="hampers.html" class="btn">← Back to Hampers</a>
   </div>
@@ -44,6 +47,15 @@
     </div>
 
   </section>
+<script>
+function openImage(src) {
+  document.getElementById("popupImg").src = src;
+  document.getElementById("imagePopup").style.display = "block";
+}
 
+function closeImage() {
+  document.getElementById("imagePopup").style.display = "none";
+}
+</script>
 </body>
 </html>
