@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resin Fridge Magnets And pendants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>Resin Fridge Magnets And pendants</h1>
+<a href="index.html">⬅ Back to Home</a>
+
+<hr>
+
+<p>📸 Photo will be uploaded here</p>
+
+<ul>
+  <li>Resin Fridge magnets</li>
+ <div class="product-images">
+   <img src="images/fridge-magnet1.jpg" alt="Resin Fridge magnets"
+     onclick="openPopup(this.src)">
+   </div>
+  <li>Resin Pendants and Rar Studs</li>
+  <p>📸 Photo will be uploaded here</p>
+</ul>
+
+<p><b>Customization:</b> Photo(ExtraCharges on customization) + Name</p>
+
+<a href="https://wa.me/919110536348">Order on WhatsApp</a>
+<div id="imagePopup" class="popup" onclick="closePopup()">
+  <span class="close">&times;</span>
+  <img id="popupImg">
+</div>
+  <script>
+  function openPopup(src) {
+    document.getElementById("popupImg").src = src;
+    document.getElementById("imagePopup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+  }
+  </script>
+</body>
+</html>
