@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabet Beads Name Keychain(Ocean Theme)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>Alphabet Beads Name Keychain</h1>
+<a href="index.html">⬅ Back to Home</a>
+
+<hr>
+<ul>
+  <li>Alphabet Beads Name Keychain(Ocean Theme)</li>
+ <div class="product-images">
+   <img src="images/alphabet-beads-name-keychain1.jpg" alt="Alphabet Beads Name Keychain"
+     onclick="openPopup(this.src)">
+   </div>
+</ul>
+
+<p><b>Customization:</b>Name(needs to send in whatsapp)</p>
+
+<a href="https://wa.me/919110536348">Order on WhatsApp</a>
+<div id="imagePopup" class="popup" onclick="closePopup()">
+  <span class="close">&times;</span>
+  <img id="popupImg">
+</div>
+  <script>
+  function openPopup(src) {
+    document.getElementById("popupImg").src = src;
+    document.getElementById("imagePopup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+  }
+  </script>
+</body>
+</html>
