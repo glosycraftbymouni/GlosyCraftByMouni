@@ -436,11 +436,11 @@ footer {
   gap: 25px;
   padding: 12px;
 }
-.hamper-grid img{
+/*.hamper-grid img{
     width: 100%;
     height: auto;
     border-radius: 12px;
-}
+} */
 
 /* Mobile */
 /* @media (max-width: 768px) {
@@ -460,11 +460,12 @@ footer {
 }
 
 /* phone fix */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .hamper-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
 
 
 
