@@ -377,16 +377,16 @@ footer {
 /*added at jan9th 3:21pm */
 .big-img {
   width: 100%;
-  max-width: 420px
+  max-width: 280px;         /* main control */
   height: auto;
   object-fit: contain;
   border-radius: 10px;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .thumb-bar {
-  max-width: 420px;
+  max-width: 280px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -407,6 +407,7 @@ footer {
   border-radius: 6px;
   cursor: pointer;
 }
+
 
 
 
