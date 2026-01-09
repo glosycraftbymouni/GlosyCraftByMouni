@@ -408,7 +408,7 @@ footer {
   cursor: pointer;
 }
 .gallery .big-img {
-  width: auto !important;
+  width: auto;
   max-width: 280px !important;
   height: auto !important;
 }
@@ -427,6 +427,7 @@ footer {
   max-height: 100%;
   object-fit: contain;
 }
+
 
 
 
