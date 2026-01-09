@@ -407,6 +407,12 @@ footer {
   border-radius: 6px;
   cursor: pointer;
 }
+.gallery .big-img {
+  width: auto !important;
+  max-width: 280px !important;
+  height: auto !important;
+}
+
 
 
 
