@@ -430,12 +430,12 @@ footer {
   max-height: 100%;
   object-fit: contain;
 }
-.hampers-grid {
+/*.hampers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   padding: 12px;
-}
+} */
 .hamper-grid img{
     width: 100%;
     height: auto;
@@ -468,6 +468,7 @@ footer {
        gap: 14px;
   }
 }
+
 
 
 
