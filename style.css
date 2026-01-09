@@ -449,6 +449,22 @@ footer {
     padding-bottom: 0;
   }
 }  */
+.hamper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hamper-card {
+  width: 100%;
+}
+
+/* phone fix */
+@media (max-width: 768px) {
+  .hamper-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
 
 
