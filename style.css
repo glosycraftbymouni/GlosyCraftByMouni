@@ -33,6 +33,7 @@ header p {
   border-radius: 20px;
   font-size: 14px;
   font-weight: bold;
+  text-align: center;
 }
 
 /* ========== SECTIONS ========== */
@@ -299,6 +300,7 @@ footer {
   cursor: pointer;
   font-weight: bold;
 }
+
 
 
 
