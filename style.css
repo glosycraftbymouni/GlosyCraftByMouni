@@ -327,9 +327,11 @@ footer {
 
 .product-grid-new img {
   width: 100%;
+  object-fit: cover;
   border-radius: 12px;
   cursor: pointer;
 }
+
 
 
 
