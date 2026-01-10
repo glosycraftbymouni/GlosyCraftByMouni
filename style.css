@@ -268,3 +268,31 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+/* ===== IMAGE POPUP FULLSCREEN (CSS ONLY, SAFE) ===== */
+#imagePopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#imagePopup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+#imagePopup .close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
