@@ -346,6 +346,38 @@ footer {
   cursor: pointer;
 }
 
+/* ===== Frames page horizontal scroll override ===== */
+.frames-page .product-grid-new {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 6px;
+  scroll-snap-type: x mandatory;
+}
+
+.frames-page .product-img-box {
+  min-width: 240px;
+  max-width: 240px;
+  scroll-snap-align: start;
+}
+
+.frames-page .product-img-box img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* scrollbar (optional but nice) */
+.frames-page .product-grid-new::-webkit-scrollbar {
+  height: 6px;
+}
+.frames-page .product-grid-new::-webkit-scrollbar-thumb {
+  background: #d6a6b8;
+  border-radius: 10px;
+}
+
+
 
 
 
