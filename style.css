@@ -331,6 +331,21 @@ footer {
   border-radius: 12px;
   cursor: pointer;
 }
+.product-img-box {
+  width: 100%;
+  height: 260px;      /* change if needed */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* IMPORTANT */
+  cursor: pointer;
+}
+
 
 
 
