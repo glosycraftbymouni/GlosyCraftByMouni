@@ -349,7 +349,9 @@ footer {
 /* ===== Frames page horizontal scroll override ===== */
 .frames-page .product-grid-new {
   display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 16px;
   padding: 10px 6px;
   scroll-snap-type: x mandatory;
@@ -376,6 +378,7 @@ footer {
   background: #d6a6b8;
   border-radius: 10px;
 }
+
 
 
 
