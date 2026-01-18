@@ -422,6 +422,63 @@ footer {
     display: none;
   }
 }
+/* ===== Amazon Style Hamper Reveal ===== */
+
+.hamper-reveal-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.hamper-reveal-card:hover {
+  transform: translateY(-6px);
+}
+
+.hamper-box {
+  position: relative;
+  width: 260px;
+  height: 220px;
+  margin: 0 auto 15px;
+}
+
+.hamper-box-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* Items inside hamper */
+.hamper-item {
+  position: absolute;
+  bottom: 40px;
+  width: 80px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Item positions */
+.item1 { left: 10px; }
+.item2 { left: 70px; }
+.item3 { left: 130px; }
+.item4 { left: 190px; }
+
+/* Reveal on hover */
+.hamper-reveal-card:hover .hamper-item {
+  opacity: 1;
+  bottom: 110px;
+}
+
+/* Mobile tap support */
+.hamper-reveal-card:active .hamper-item {
+  opacity: 1;
+  bottom: 110px;
+}
+
 
 
 
