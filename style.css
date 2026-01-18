@@ -590,15 +590,21 @@ footer {
 }
 
 .add-btn {
+  width: 100%;
   margin-top: 8px;
   padding: 6px 12px;
   background: #ff5a7a;
   color: #fff;
   border-radius: 14px;
   font-size: 13px;
+  font-weight: bold;
   cursor: pointer;
   display: inline-block;
 }
+.add-btn:hover{
+  background: #e75480;
+}
+
 
 
 
