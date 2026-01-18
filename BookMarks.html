@@ -32,7 +32,62 @@
     <button onclick="scrollThumb(1)">›</button>
   </div>
 
-   </div>  
+   </div> 
+    <div id="imagePopup" class="popup">
+  <span class="close" onclick="closeImage()">×</span>
+  <img id="popupImg">
+</div>
+     <section class="details-container">
+
+    <div class="details-card">
+     <!-- <img src="images/alphabet-keyring.jpg" alt="Alphabet Keyring Combo">-->
+
+      <h2>Product Details</h2>
+<ul>
+  <li>Customized book marks with tassels</li>
+  <li>Preferred colour customization (customer choice)</li>
+   <li>Available In Below Sizes</li>
+  <li>8 Inch Rectangular book mark: Price: ₹80</li>
+   <li>6 Inch Rectangular book mark: Price: ₹70</li>
+   <li>4 Inch Rectangular book mark: Price: ₹60</li>
+  <li>6 Inch Feather book mark:Price: ₹90</li>
+  <li>Extra price for Customizations</li>
+</ul>
+
+<p><strong></strong>Extra price for Customizations+shipping charges</p>
+
+      <a
+        href="https://wa.me/919110536348?text=Hi%20I%20want%20to%20order%20Customized%20Bookmark"
+        class="btn whatsapp"
+        target="_blank">
+        Order on WhatsApp
+      </a>
+    </div>
+
+  </section>
+    <div class="back-home">
+    <a href="hampers.html" class="btn">← Back to Hampers</a>
+  </div>
+<script>
+function openImage(src) {
+  document.getElementById("popupImg").src = src;
+  document.getElementById("imagePopup").style.display = "block";
+}
+
+function closeImage() {
+  document.getElementById("imagePopup").style.display = "none";
+}
+</script>
+  <script>
+  function show(img) {
+    document.getElementById("bigImage").src = img.src;
+  }
+
+  function scrollThumb(dir) {
+    document.querySelector(".thumbs").scrollLeft += dir * 80;
+  }
+</script>
+
   </div>
 </body>
 </html>
