@@ -190,11 +190,9 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
   <h4>Your Order</h4>
   <div id="orderItems"></div>
 
-  <a 
-     class="btn"
-     onclick="orderOnWhatsApp()">
-     Order Selected Items on WhatsApp
-  </a>
+  <button class="btn" onclick="orderOnWhatsApp()">
+    Order on WhatsApp
+  </button
 </div>
   <script>
 let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
@@ -223,9 +221,74 @@ function orderOnWhatsApp() {
 }
 </script>
   <!-- Global Floating Order Button -->
-<button class="global-order-btn" onclick="orderOnWhatsApp()">
+<!-- Floating Order List Button -->
+<button class="order-float-btn" onclick="toggleOrderPanel()">
   🛒 Order List
 </button>
 </div>
+  <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addItem(name, img) {
+  const found = cart.find(i => i.name === name);
+  if (found) {
+    found.qty += 1;
+  } else {
+    cart.push({ name, img, qty: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function toggleOrderPanel() {
+  document.getElementById("orderPanel").classList.toggle("open");
+  renderCart();
+}
+
+function renderCart() {
+  const box = document.getElementById("orderItems");
+  box.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    box.innerHTML += `
+      <div class="order-item">
+        <img src="${item.img}">
+        <div>
+          <div>${item.name}</div>
+          <div class="qty-controls">
+            <button onclick="changeQty(${index}, -1)">−</button>
+            ${item.qty}
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function changeQty(index, delta) {
+  cart[index].qty += delta;
+  if (cart[index].qty <= 0) cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function orderOnWhatsApp() {
+  if (cart.length === 0) {
+    alert("Your order list is empty");
+    return;
+  }
+
+  let msg = "Hi Glosycraftbymouni 👋\n\nI want to order:\n";
+  cart.forEach((i, idx) => {
+    msg += `${idx+1}. ${i.name} × ${i.qty}\n`;
+  });
+
+  window.open(
+    "https://wa.me/919110536348?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+  </script>
 </body>
 </html>
