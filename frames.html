@@ -55,22 +55,20 @@
 <div class="frame-scroll-wrapper">
   <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
   
-  <div class="product-grid-new">
-    
+ <div class="product-grid-new">
+  <div class="product-card">
     <div class="product-img-box">
     <img src="images/6inch-frame-1.jpeg" onclick="openPopup(this.src)">
-      <button class="add-btn" onclick="addToOrder('6 inch Resin Photo Frame')"> Add to Order</button>
      </div>
+    <button class="btn" onclick="addItem(6 inch Resin photo Frame)">
+      Add to List
+    </button>
+    </div>
   <div class="product-img-box">
     <img src="images/6inch-frame-1.1.jpeg" onclick="openPopup(this.src)">
-    <button class="add-btn" onclick="addToOrder('6 inch Resin Photo Frame')"> Add to Order</button>
   </div>
     <div class="product-img-box">
     <img src="images/6inch-frame-2.jpg" onclick="openPopup(this.src)">
-      <div class="add-btn"
-          onclick="addToOrder('6 inch Resin Photo Frame')">
-          Add to Order
-        </div>
   </div>
   </div>
   <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
@@ -84,24 +82,12 @@
   <div class="product-grid-new">
      <div class="product-img-box">
     <img src="images/8inch-frame-1.jpg" onclick="openPopup(this.src)">
-       <div class="add-btn"
-          onclick="addToOrder('8 inch Resin Photo Frame')">
-          Add to Order
-        </div>
   </div>
     <div class="product-img-box">
     <img src="images/8inch-frame-1.1.jpg" onclick="openPopup(this.src)">
-       <div class="add-btn"
-          onclick="addToOrder('8 inch Resin Photo Frame')">
-          Add to Order
-        </div>
   </div>
     <div class="product-img-box">
     <img src="images/8inch-frame-1.2.jpg" onclick="openPopup(this.src)">
-       <div class="add-btn"
-          onclick="addToOrder('8 inch Resin Photo Frame')">
-          Add to Order
-        </div>
     </div>
   </div>
   <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
@@ -211,28 +197,29 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
   </a>
 </div>
   <script>
-let orderList = [];
+let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
-function addToOrder(item) {
-  orderList.push(item);
-  document.getElementById("orderPanel").style.display = "block";
-  renderOrder();
+function addItem(item) {
+  selectedItems.push(item);
+  localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+  alert(item + " added to list");
 }
 
-function renderOrder() {
-  const box = document.getElementById("orderItems");
-  box.innerHTML = "";
+function orderOnWhatsApp() {
+  if (selectedItems.length === 0) {
+    alert("Please add at least one item");
+    return;
+  }
 
-  orderList.forEach((item, i) => {
-    box.innerHTML += <div class="order-item">• ${item}</div>;
+  let msg = "Hi Glosycraftbymouni 👋\n\nI want to order:\n";
+  selectedItems.forEach((i, idx) => {
+    msg += (idx + 1) + ". " + i + "\n";
   });
 
-  const text =
-    "Hi Glosycraftbymouni,%0A%0AI want to order:%0A" +
-    orderList.map(i => "- " + i).join("%0A");
-
-  document.getElementById("whatsappOrder").href =
-    "https://wa.me/919110536348?text=" + text;
+  window.open(
+    "https://wa.me/919110536348?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
 }
 </script>
 </body>
