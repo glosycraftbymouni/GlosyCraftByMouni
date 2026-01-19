@@ -60,7 +60,7 @@
     <div class="product-img-box">
     <img src="images/6inch-frame-1.jpeg" onclick="openPopup(this.src)">
      </div>
-    <button class="btn" onclick="addItem(6 inch Resin photo Frame)">
+    <button class="btn" onclick="addItem('6 inch Resin photo Frame')">
       Add to List
     </button>
     </div>
@@ -190,10 +190,10 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
   <h4>Your Order</h4>
   <div id="orderItems"></div>
 
-  <a id="whatsappOrder"
+  <a 
      class="btn"
-     target="_blank">
-     Order on WhatsApp
+     onclick="orderOnWhatsApp()">
+     Order Selected Items on WhatsApp
   </a>
 </div>
   <script>
@@ -222,5 +222,10 @@ function orderOnWhatsApp() {
   );
 }
 </script>
+  <div style="text-align:center; margin:40px 0;">
+  <button class="btn" onclick="orderOnWhatsApp()">
+    Order Selected Items on WhatsApp
+  </button>
+</div>
 </body>
 </html>
