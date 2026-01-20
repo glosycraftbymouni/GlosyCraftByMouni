@@ -208,6 +208,8 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
     });
 });
 </script>
+  <div class="order-overlay" id="orderOverlay"
+    onclick="toggleOrderPanel()"></div>
 <div class="order-panel" id="orderPanel">
   <button class="close-panel" onclick="toggleOrderPanel()">✕</button>
   <h4>Your Order</h4>
@@ -224,7 +226,11 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 /* OPEN / CLOSE ORDER PANEL */
 function toggleOrderPanel() {
   const panel = document.getElementById("orderPanel");
+  const overlay = document.getElementById("orderOverlay");
+
   panel.classList.toggle("open");
+  overlay.classList.toggle("show");
+
   renderCart();
 }
 
