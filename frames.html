@@ -272,7 +272,7 @@ function orderOnWhatsApp() {
 
   let msg = "Hi Glosycraftbymouni 👋\n\nI want to order:\n";
   cart.forEach((i, idx) => {
-    msg += ${idx + 1}. ${i.name} × ${i.qty}\n;
+    msg += {idx + 1}+". "+i.name+" x " + i.qty + "\n";
   });
 
   window.open(
