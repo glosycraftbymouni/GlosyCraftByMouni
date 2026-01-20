@@ -222,7 +222,19 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
   
    <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartBadge() {
+  const badge = document.getElementById("cartBadge");
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
 
+  if (!badge) return; // safety
+
+  if (totalQty > 0) {
+    badge.textContent = totalQty;
+    badge.style.display = "flex";
+  } else {
+    badge.style.display = "none";
+  }
+}
 /* OPEN / CLOSE ORDER PANEL */
 function toggleOrderPanel() {
   const panel = document.getElementById("orderPanel");
@@ -249,6 +261,7 @@ function addItem(name, img) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartBadge();
 }
 
 /* RENDER CART ITEMS */
@@ -288,6 +301,7 @@ function changeQty(index, delta) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
+  updateCartBadge();
 }
 
 /* ORDER ON WHATSAPP */
@@ -308,11 +322,13 @@ function orderOnWhatsApp() {
     "_blank"
   );
 }
+     updateCartBadge(); // page load
 </script>
   <!-- Global Floating Order Button -->
 <!-- Floating Order List Button -->
 <button class="order-float-btn" onclick="toggleOrderPanel()">
   🛒 Order List
+  <span class="cart-badge" id="cartBadge">0</span>
 </button>
 </body>
 </html>
