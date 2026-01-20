@@ -598,17 +598,14 @@ footer {
 .order-panel {
   position: fixed;
   top: 0;
-  right: -360px;
-  width: 320px;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
   height: 100vh;
   background: #fff;
-  box-shadow: -6px 0 18px rgba(0,0,0,0.25);
-  padding: 15px;
   z-index: 9998;
-  transition: right 0.35s ease;
   overflow-y: auto;
 }
-
 .order-panel.open {
   right: 0;
 }
@@ -634,21 +631,24 @@ footer {
 }
 
 .order-item img {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px
+  min-height: 50px
   object-fit: cover;
   border-radius: 6px;
-  flex-shrink: 0; /* IMPORTANT */
+  flex-shrink: 0;/* IMPORTANT */
+  display: block;
 }
-.order-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 85%;
-  max-width: 320px;
-  height: 100vh;
-  background: #fff;
-  z-index: 9998;
-  overflow-y: auto;
+.close-panel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
+
+
 
