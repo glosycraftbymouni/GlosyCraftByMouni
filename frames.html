@@ -221,34 +221,49 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
    <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+/* OPEN / CLOSE ORDER PANEL */
 function toggleOrderPanel() {
-  document.getElementById("orderPanel").classList.toggle("open");
+  const panel = document.getElementById("orderPanel");
+  panel.classList.toggle("open");
   renderCart();
 }
 
+/* ADD ITEM TO CART */
 function addItem(name, img) {
-  const found = cart.find(i => i.name === name);
+  const found = cart.find(item => item.name === name);
+
   if (found) {
     found.qty += 1;
   } else {
-    cart.push({ name, img, qty: 1 });
+    cart.push({
+      name: name,
+      img: img,
+      qty: 1
+    });
   }
+
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+/* RENDER CART ITEMS */
 function renderCart() {
   const box = document.getElementById("orderItems");
   box.innerHTML = "";
 
+  if (cart.length === 0) {
+    box.innerHTML = "<p>No items added</p>";
+    return;
+  }
+
   cart.forEach((item, index) => {
     box.innerHTML += `
       <div class="order-item">
-        <img src="${item.img}" width="50">
-        <div>
-          <div>${item.name}</div>
-          <div>
+        <img src="${item.img}" alt="" width="50">
+        <div class="order-info">
+          <div class="order-name">${item.name}</div>
+          <div class="qty-controls">
             <button onclick="changeQty(${index}, -1)">−</button>
-            ${item.qty}
+            <span>${item.qty}</span>
             <button onclick="changeQty(${index}, 1)">+</button>
           </div>
         </div>
@@ -257,13 +272,19 @@ function renderCart() {
   });
 }
 
+/* CHANGE QUANTITY */
 function changeQty(index, delta) {
   cart[index].qty += delta;
-  if (cart[index].qty <= 0) cart.splice(index, 1);
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
 
+/* ORDER ON WHATSAPP */
 function orderOnWhatsApp() {
   if (cart.length === 0) {
     alert("Your order list is empty");
@@ -271,8 +292,9 @@ function orderOnWhatsApp() {
   }
 
   let msg = "Hi Glosycraftbymouni 👋\n\nI want to order:\n";
-  cart.forEach((i, idx) => {
-    msg += {idx + 1}+". "+i.name+" x " + i.qty + "\n";
+
+  cart.forEach((item, i) => {
+    msg += (i + 1) + ". " + item.name + " × " + item.qty + "\n";
   });
 
   window.open(
