@@ -625,4 +625,30 @@ footer {
   object-fit: cover;
   border-radius: 8px;
 }
+/* ===== Order Panel Fix (Mobile Image Visible) ===== */
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.order-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0; /* IMPORTANT */
+}
+.order-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  z-index: 9998;
+  overflow-y: auto;
+}
 
