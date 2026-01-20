@@ -602,13 +602,14 @@ footer {
 .order-panel {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 85%;
-  max-width: 360px;
-  height: 100vh;
+  right: -100%;
+  width: 300px;
+  height: 100%;
   background: #fff;
-  z-index: 10000; /*very important*/
+  z-index: 9999; /*very important*/
+  padding: 15px;
   box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
   overflow-y: auto;
 }
 .order-panel.open {
@@ -656,6 +657,7 @@ footer {
   cursor: pointer;
   z-index: 10001; /* larger than panel*/
 }
+
 
 
 
