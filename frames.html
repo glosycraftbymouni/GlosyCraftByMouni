@@ -270,7 +270,8 @@ function renderCart() {
   box.innerHTML = "";
 
   if (cart.length === 0) {
-    box.innerHTML = "<p>No items added</p>";
+    box.innerHTML = "<p style='text-align:center;color:#999'>No items added</p>";
+    updateCartBadge();// cart number hide if cart is empty
     return;
   }
 
@@ -289,6 +290,7 @@ function renderCart() {
       </div>
     `;
   });
+  updateCartBadge(); // Badge will be update if items are there
 }
 
 /* CHANGE QUANTITY */
@@ -321,17 +323,21 @@ function orderOnWhatsApp() {
     "https://wa.me/919110536348?text=" + encodeURIComponent(msg),
     "_blank"
   );
+  updateCartBadge(); // page load
 }
-     updateCartBadge(); // page load
+     
+     
  /* 3️⃣ Animation handler for AddToCart button */
      function handleAddToCart(btn, name, img) {
   btn.classList.add("clicked");   // click feel
   addItem(name, img);             // existing logic
-
+    renderCart();
   setTimeout(() => {
     btn.classList.remove("clicked");
-  }, 150);
+  }, 150); 
+updateCartBadge();
 }
+     
 </script>
 
   <!-- Global Floating Order Button -->
