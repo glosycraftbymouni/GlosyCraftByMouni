@@ -680,6 +680,34 @@ footer {
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
+/* ===== ADD TO CART CLICK FEEL ===== */
+.add-to-cart-btn {
+  background: #ff5a7a;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 4px 0 #d94a66;
+  transition: transform 0.12s ease,
+              box-shadow 0.12s ease,
+              background 0.12s ease;
+}
+
+/* PRESS FEEL */
+.add-to-cart-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #d94a66;
+}
+
+/* QUICK CONFIRM FEEDBACK */
+.add-to-cart-btn.clicked {
+  background: #e75480;
+}
+
 
 
 
