@@ -214,7 +214,9 @@ document.querySelectorAll('.frame-scroll-wrapper').forEach(wrapper => {
   <button class="close-panel" onclick="toggleOrderPanel()">✕</button>
   <h4>Your Order</h4>
   <div id="orderItems"></div>
-
+<button class="btn clear-cart-btn" onclick="clearCart()">
+  Clear Cart
+</button>
   <button class="btn" onclick="orderOnWhatsApp()">
     Order on WhatsApp
   </button
@@ -337,6 +339,22 @@ function orderOnWhatsApp() {
   }, 150); 
 updateCartBadge();
 }
+/* clear cart function */     
+     function clearCart() {
+  if (!cart.length) {
+    alert("Cart already empty");
+    return;
+  }
+
+  if (!confirm("Clear all items from cart?")) return;
+
+  cart = [];
+  localStorage.removeItem("cart");
+
+  renderCart();
+  updateCartBadge();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCart();
   updateCartBadge();
